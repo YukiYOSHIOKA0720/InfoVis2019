@@ -88,7 +88,7 @@ function main()
       var p_wld = p_NDC.unproject( camera );
 
       var origin = camera.position;
-      var direction = p_wld.sub(camera.position).nomalize();
+      var direction = p_wld.sub(camera.position).normalize();
       var raycaster = new THREE.Raycaster( origin, direction );
       var intersects = raycaster.intersectObject( triangle );
 
@@ -98,7 +98,7 @@ function main()
       intersects[0].object.geometry.colorsNeedUpdate = true;
     }
   }
-  
+
   loop();
     function loop()
     {
