@@ -50,7 +50,7 @@ function main()
 
     var material = new THREE.MeshBasicMaterial();
     material.vertexColors = THREE.FaceColors;
-    for(var i=0; i<10; i++){
+    for(var i=0; i<12; i++){
       geometry.faces.push( new THREE.Face3( faces[i][0], faces[i][1], faces[i][2] ) );
       //geometry.faces[i].color = new THREE.Color( 1, 0, 0 );//Color(Red,Green,Blue)
     }
@@ -76,8 +76,8 @@ function main()
     function loop()
     {
         requestAnimationFrame( loop );
-        triangle.rotation.x += 0.001;
-        triangle.rotation.y += 0.001;
+        triangle.rotation.x += 0.01;
+        triangle.rotation.y += 0.01;
         renderer.render( scene, camera );
     }
 }
