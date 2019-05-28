@@ -95,7 +95,7 @@ function Isosurfaces( volume, isovalue )
 
     material.color = new THREE.Color( "white" );
 
-    loop();
+    //loop();
 
     return lobster;
 
