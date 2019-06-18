@@ -1,4 +1,4 @@
-function Isosurfaces( volume, isovalue ,red,green,blue)
+function Isosurfaces( volume, isovalue ,red,green,blue, shader)
 {
     var geometry = new THREE.Geometry();
     var material = new THREE.MeshLambertMaterial();
