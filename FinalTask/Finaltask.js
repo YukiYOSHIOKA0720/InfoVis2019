@@ -13,18 +13,22 @@ function main()
 
     var bounds = Bounds( volume );
     screen.scene.add( bounds );
+    var red = document.getElementById('Red');
+    var green = document.getElementById('Green');
+    var blue = document.getElementById('Blue');
 
-    if(apply==1){
-      surfaces = null;
-      var isovalue = document.getElementById("isovalue").value*256;
-      var surfaces = Isosurfaces( volume, isovalue );
-      screen.scene.add( surfaces );
-    }else{
-      surfaces = null;
-      var isovalue  = 128;
-      var surfaces = Isosurfaces( volume, isovalue );
-      screen.scene.add( surfaces );
-    }
+    var isovalue  = 128;
+    var surfaces = Isosurfaces( volume, isovalue );
+    screen.scene.add( surfaces );
+
+    document.getElementById('change-isovalue-button').addEventListener('click', function() {
+         screen.scene.remove(surfaces)
+          red = red.value;
+          green = green.value;
+          blue = blue.value;
+          surfaces = Isosurfaces( volume, isovalue ,red,green,blue);
+          screen.scene.add( surfaces );
+       });
 
     document.addEventListener( 'mousemove', function() {
         screen.light.position.copy( screen.camera.position );
