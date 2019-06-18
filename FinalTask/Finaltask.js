@@ -18,7 +18,7 @@ function main()
     var blue = document.getElementById('Blue');
 
     var isovalue  = 128;
-    var surfaces = Isosurfaces( volume, isovalue );
+    var surfaces = Isosurfaces1( volume, isovalue,red,green,blue);
     screen.scene.add( surfaces );
 
     document.getElementById('change-isovalue-button').addEventListener('click', function() {
@@ -26,9 +26,15 @@ function main()
           red = red.value;
           green = green.value;
           blue = blue.value;
-          surfaces = Isosurfaces( volume, isovalue ,red,green,blue);
+          surfaces = Isosurfaces1( volume, isovalue ,red,green,blue);
           screen.scene.add( surfaces );
        });
+
+  document.getElementById('change-shader-button').addEventListener('click', function() {
+            screen.scene.remove(surfaces)
+             surfaces = Isosurfaces2( volume, isovalue );
+             screen.scene.add( surfaces );
+          });
 
     document.addEventListener( 'mousemove', function() {
         screen.light.position.copy( screen.camera.position );
