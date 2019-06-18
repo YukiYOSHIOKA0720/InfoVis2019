@@ -14,9 +14,9 @@ function Isosurfaces1( volume, isovalue ,red,green,blue)
     for ( var i = 0; i < 256; i++ )
     {
         var S = i / 255.0; // [0,1]
-        var R = Math.max( Math.cos( ( S - red ) * Math.PI ), 0.0 );
-        var G = Math.max( Math.cos( ( S - green ) * Math.PI ), 0.0 );
-        var B = Math.max( Math.cos( ( S - blue ) * Math.PI ), 0.0 );
+        var R = Math.max( Math.cos( ( S - red/2 ) * Math.PI ), 0.0 );
+        var G = Math.max( Math.cos( ( S - green/2 ) * Math.PI ), 0.0 );
+        var B = Math.max( Math.cos( ( S - blue/2 ) * Math.PI ), 0.0 );
         var color = new THREE.Color( R, G, B );
         cmap.push( [ S, '0x' + color.getHexString() ] );
     }
